@@ -5,8 +5,8 @@ import IncidentParser from "./components/IncidentParser";
 export default function ZabbixParser() {
  
   return (
-    <div>
+    <main className="w-full h-full min-h-screen">
       <IncidentParser />
-    </div>
+    </main>
   );
 }

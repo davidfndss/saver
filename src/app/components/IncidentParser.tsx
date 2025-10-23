@@ -37,21 +37,21 @@ export default function IncidentParser() {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-2xl font-semibold mb-4">Incident → Excel (single incident)</h1>
-      <p className="mb-4 text-sm text-gray-600">Cole aqui o texto do incidente do Zabbix (interface, e-mail, etc.). O parser tentará extrair os campos solicitados e devolverá uma linha pronta para colar no Excel.</p>
+      <h1 className="text-2xl font-semibold mb-4">Saver: Incidente Zabbix → Excel</h1>
+      <p className="mb-4 text-sm text-gray-600">Cole aqui a descrção do incidente do Zabbix. O parser tentará extrair os campos solicitados e devolverá uma linha pronta para colar no Excel.</p>
 
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
         rows={12}
-        className="w-full p-3 border rounded-md mb-3 font-mono"
+        className="w-full p-3 rounded-lg mb-3 font-mono resize-none border border-zinc-700 bg-zinc-900"
         placeholder="Cole o incidente aqui..."
       />
 
       <div className="flex gap-2">
         <button
           onClick={handleParse}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="px-4 py-2 bg-white text-zinc-950 font-[400] rounded transition cursor-pointer hover:bg-green-600 hover:text-white"
           disabled={loading}
         >
           {loading ? "Processando..." : "Gerar tabela"}
@@ -59,7 +59,7 @@ export default function IncidentParser() {
 
         <button
           onClick={() => { setInput(""); setOutput(null); setError(null); }}
-          className="px-4 py-2 bg-gray-200 rounded"
+          className="px-4 py-2 bg-gray-800 rounded cursor-pointer"
         >
           Limpar
         </button>
